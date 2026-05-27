@@ -1,3 +1,25 @@
 spring:
   application:
     name: docqa
+
+  # Database
+  datasource:
+    url: jdbc:postgresql://localhost:5432/docqa
+    username: docqa
+    password: docqa
+    driver-class-name: org.postgresql.Driver
+  
+  # JPA
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+        format_sql: true
+    defer-datasource-initialization: true
+  
+  # Schema initialization
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql

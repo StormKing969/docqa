@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: docqa-postgres
+    environment:
+      POSTGRES_DB: docqa
+      POSTGRES_USER: docqa
+      POSTGRES_PASSWORD: docqa
+    ports:
+      - "5432:5432"
+    volumes:
+      - docqa-data:/var/lib/postgresql/data
+
+volumes:
+  docqa-data:
