@@ -9,7 +9,7 @@ import java.util.List;
 public interface DocumentChunkRepository extends JpaRepository<DocumentChunk, Long> {
 
     @Query(value = """
-            SELECT *
+            SELECT id, document_id, chunk_index, content, embedding::text AS embedding, created_at
             FROM document_chunks
             ORDER BY embedding <=> CAST(:queryEmbedding AS vector)
             LIMIT :limit

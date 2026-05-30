@@ -1,0 +1,6 @@
+package com.sajana.docqa;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface LlmCallRepository extends JpaRepository<LlmCall, Long> {
+}
